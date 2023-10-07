@@ -1,0 +1,11 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'main.css' %}">
+<h1>hello test</h1>
+<ul>
+{% for persons in mypersons  %}
+<li>{{persons.name}} from {{persons.place}}</li>
+{% if persons.name == 'raji' %}
+<p>she is agirl</p>
+{% endif %}
+{% endfor %}
+</ul

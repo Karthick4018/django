@@ -1,0 +1,4 @@
+<h1>testing</h1>
+{% for x in mymembers  %}
+<h1><a href="{% url 'fetch' x.id %}">click</a></h1>
+{% endfor %}

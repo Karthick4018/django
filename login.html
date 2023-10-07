@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'regstyle.css' %}">
+</head>
+<body>
+    <div class="bdy">
+    <h1>login form</h1>
+    {% for message in messages  %}
+    <h3 style="color:red;">{{message}}</h3>
+    {% endfor %}
+    <div>
+    <form action="login" method="POST">
+        {% csrf_token %}
+        <p><label for="user">Username:</label></p>
+        <input type="text" name="username" id="user">
+        <p><label for="pass">PASSWORD:</label></p>
+        <input type="password" name="password" id="pass">
+        <p><input type="submit"></p>
+    </form>
+    <p><button><a href="register">new? register here</a></button></p>
+</div>
+</div>
+    
+</body>
+</html>

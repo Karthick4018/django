@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'logstyle.css' %}">
+</head>
+<body>
+    <div class="bdy">
+    <h1>Sign Up</h1>
+    {% for message in messages  %}
+    <h5>{{message}}</h5>
+    {% endfor %}
+    <form method="POST" action="register">
+        {% csrf_token %}
+    <div>
+        <p>Username</p>
+        <input type="text" name="username">
+    </div>
+    <div>
+       <p>E-MAIL</p>
+        <input type="email" name="email">
+    </div>
+    <div>
+        <p>PASSWORD</p>
+        <input type="password" name="password">
+    </div>
+    <div>
+        <p>REPEAT PASSWORD</p>
+        <input type="password"name="password2">
+    </div>
+    <p><input type="submit"></p>
+    </form>
+    <p><button><a href="login">already signed login here</a></button></p>
+</div>
+    
+</body>
+</html>

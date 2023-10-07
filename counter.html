@@ -1,0 +1,4 @@
+<h1>Amount of Words is {{amt}}</h1>
+{% for x in post  %}
+<h2><a href="{% url 'posts' x %}">click</a></h2>
+{% endfor %}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blog.css' %}">
+</head>
+<body>
+    <header>
+        <div class="head headd" id="hh" >
+            <div class="logo">
+                <h1>KaRtHiK</h1>
+            </div>
+            <nav>
+                <ul id="menulist" class="func">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ACCESSORIES</a></li>
+                    <li><a href="#">PRODUCTS</a></li>
+                    <li><a href="#">CONTACTS</a></li>
+                </ul>
+            </nav>
+            <div class="menubar" onclick="menubar()">
+                <div class="line1"></div>
+                <div class="line1"></div>
+                <div class="line1"></div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="gridcontainer">
+        {% for x in myblogs  %}
+        
+        <div class="item1">
+            <a style="text-decoration: none; color:white;" href="{% url 'dynamicblog' x.id %}">
+            <div class="title">
+                
+                <h1>{{x.title}}</h1>
+            </div>
+            <div class="content">
+                <p>{{x.content}}</p>
+            </div>
+        </a>
+         </div>
+         {% endfor %}
+        
+    </div>
+   
+    
+    <script src="{% static 'menu.js' %}"></script>
+    
+</body>
+</html>
